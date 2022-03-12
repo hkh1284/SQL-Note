@@ -68,7 +68,7 @@ FROM ANIMAL_INS
 GROUP BY ANIMAL_TYPE
 ORDER BY ANIMAL_TYPE
 
-#그룹화한 특정컬럼의 어떤 레코드값이 2번 이상인 것들만 출력(단, 레코드의 값이 없는 것들은 제외)
+#그룹화한 특정컬럼의 어떤 레코드값이 2번 이상인 것들만 출력(단, 레코드의 값이 없는 것들은 제외) //WHERE은 그룹화하기 전에 조건을 걸때 사용, HAVING은 그룹화한 후에 조건을 걸때 사용
 SELECT NAME, COUNT(NAME)
 FROM ANIMAL_INS
 WHERE NAME IS NOT NULL
@@ -76,7 +76,7 @@ GROUP BY NAME
 HAVING COUNT(NAME) >= 2
 ORDER BY NAME
 
-# 
+#
 
 
 
