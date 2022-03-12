@@ -1,0 +1,10 @@
+#ORDER BY 오름차순 정렬(디폴트) : ASC
+select *
+from animal_ins
+order by animal_id ASC
+
+#ORDER BY 내림차순 정렬 : DESC
+SELECT *
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC
+
