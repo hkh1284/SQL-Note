@@ -1,4 +1,4 @@
-### select
+### SELECT
 #ORDER BY 오름차순 정렬(디폴트) : ASC
 select *
 from animal_ins
@@ -25,4 +25,28 @@ SELECT NAME
 FROM ANIMAL_INS
 ORDER BY DATETIME
 LIMIT 1
+
+
+### SUM, MAX, MIN
+#테이블이나 필드명을 재정의 할 때 AS 사용
+SELECT DATETIME AS '시간'
+FROM ANIMAL_INS
+ORDER BY DATETIME DESC
+LIMIT 1
+
+#MAX() 사용 -> 가장 최근에 보호를 시작한 동물이 언제 들어왔는지 출력
+SELECT MAX(DATETIME) AS '시간'
+FROM ANIMAL_INS
+
+#MIN() 사용 -> 가장 먼저 보호를 시작한 동물이 언제 들어왔는지 출력
+SELECT MIN(DATETIME) AS '시간'
+FROM ANIMAL_INS
+
+
+
+
+
+
+
+
 
