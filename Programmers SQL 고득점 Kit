@@ -127,7 +127,23 @@ ORDER BY I.ANIMAL_ID ASC
 
 
 ###String, Date
-#
+#루시와 엘라찾기 -> 데이터값이 특정한 목록 중에 있다면 'WHERE 컬럼명 in (~~~~~~)' 사용
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+
+#이름에 el이 들어가는 동물 찾기 -> 대소문자 구분없이 이름에 'el'이 들어가는 개의 ID와 이름 출력 -> LIKE 사용 시, 대소문자 구분X. 그러므로 LIKE '%el%'만 사용해도 된다.
+<수정 전>
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE ANIMAL_TYPE='Dog' AND (NAME LIKE '%el%' or NAME LIKE '%eL%' or NAME LIKE '%El%' or NAME LIKE '%EL%')
+ORDER BY NAME
+
+<수정 후>
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+WHERE ANIMAL_TYPE='Dog' AND NAME LIKE '%el%'
+ORDER BY NAME
 
 
 
