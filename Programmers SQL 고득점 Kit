@@ -126,7 +126,8 @@ WHERE I.SEX_UPON_INTAKE LIKE '%Intact%' and (O.SEX_UPON_OUTCOME LIKE '%Spayed%' 
 ORDER BY I.ANIMAL_ID ASC
 
 
-
+###String, Date
+#
 
 
 
