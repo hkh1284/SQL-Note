@@ -34,7 +34,7 @@ SELECT ANIMAL_ID, NAME, DATETIME
 FROM ANIMAL_INS
 ORDER BY NAME ASC, DATETIME DESC
 
-#상위 N개의 레코드만 출력 -> 가장 먼저 보호를 시작한 동물의 이름 출력 -> 보호를 시작한 시간순으로 정렬 후 상위 1개의 레코드만 출력
+1#상위 N개의 레코드만 출력 -> 가장 먼저 보호를 시작한 동물의 이름 출력 -> 보호를 시작한 시간순으로 정렬 후 상위 1개의 레코드만 출력
 SELECT NAME
 FROM ANIMAL_INS
 ORDER BY DATETIME
@@ -60,7 +60,7 @@ FROM ANIMAL_INS
 SELECT COUNT(ANIMAL_ID) AS 'count'
 FROM ANIMAL_INS
 
-#중복제거 키워드 distinct, 특정컬럼의 레코드가 NULL인 값은 집계하지 않는다-> 컬럼명 IS NOT NULL 
+1#중복제거 키워드 distinct, 특정컬럼의 레코드가 NULL인 값은 집계하지 않는다-> 컬럼명 IS NOT NULL 
 SELECT COUNT(DISTINCT NAME) #중복제거 후 이름의 갯수를 
 FROM ANIMAL_INS
 WHERE NAME IS NOT NULL
@@ -82,7 +82,7 @@ HAVING COUNT(NAME) >= 2
 ORDER BY NAME
 
 #년-월-일 시:분:초 형태의 날짜데이터에서 시간데이터만 추출하기 : HOUR(기준날짜) -> YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND()
-#입양시간 구하기(1)
+1#입양시간 구하기(1)
 <틀린코드>
 SELECT HOUR(DATETIME) AS 'HOUR', COUNT(ANIMAL_ID) AS 'COUNT'
 FROM ANIMAL_OUTS
@@ -100,13 +100,15 @@ WHERE HOUR(DATETIME)>=9 AND HOUR(DATETIME)<20
 GROUP BY HOUR(DATETIME)
 ORDER BY HOUR(DATETIME)
 
-#입양시간 구하기(2) -> HOUR(DATETIME)이 자료에는 7~19까지밖에 없다. 하지만 결과를 0~23으로 나타내려면 어떻게 해야하는가?
+1#입양시간 구하기(2) -> HOUR(DATETIME)이 자료에는 7~19까지밖에 없다. 하지만 결과를 0~23으로 나타내려면 어떻게 해야하는가?
 
 
 
 ###IS NULL
-#NULL처리하기 -> NAME이 NULL인 데이터들을 NO NAME으로 어떻게 표시하지?
-
+1#NULL처리하기 -> NAME이 NULL인 데이터들을 NO NAME으로 어떻게 표시하지? IFNULL(특정컬럼명, 해당컬럼이 NULL을 반환할 때 대체할 값)
+SELECT ANIMAL_TYPE, IFNULL(NAME, 'No name'), SEX_UPON_INTAKE
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID
 
 ###JOIN
 ##ON 조인조건
