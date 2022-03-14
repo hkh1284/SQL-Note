@@ -1,10 +1,12 @@
 ###SQL문 동작순서
 FROM
+ON
 JOIN
 WHERE
 GROUP BY
 HAVING
 SELECT
+DISTINCT
 ORDER BY
 LIMIT
 OFFSET
@@ -21,7 +23,7 @@ SELECT *
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID DESC
 
-#Where로 조건에 맞는 데이터만 출력 : 보호 시작시 상태가 'Sick'인 경우만 출력 -> ==(x) =(o) 
+#Where로 조건에 맞는 데이터만 출력 : 보호 시작시 상태가 'Sick'인 경우만 출력 -> ==(x) =(o)
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_INS
 WEHRE INTAKE_CONDITION = 'Sick'
