@@ -136,7 +136,7 @@ SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
 FROM ANIMAL_INS
 WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
 
-#이름에 el이 들어가는 동물 찾기 -> 대소문자 구분없이 이름에 'el'이 들어가는 개의 ID와 이름 출력 -> LIKE 사용 시, 대소문자 구분X. 그러므로 LIKE '%el%'만 사용해도 된다.
+1#이름에 el이 들어가는 동물 찾기 -> 대소문자 구분없이 이름에 'el'이 들어가는 개의 ID와 이름 출력 -> LIKE 사용 시, 대소문자 구분X. 그러므로 LIKE '%el%'만 사용해도 된다.
 <수정 전>
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_INS
@@ -150,7 +150,7 @@ WHERE ANIMAL_TYPE='Dog' AND NAME LIKE '%el%'
 ORDER BY NAME
 
 
-#중성화 여부 파악하기 -> 데이터에 특정한 문자열이 포함되어 있으면 O로 출력, 포함되지 않았으면 X로 출력하기
+1#중성화 여부 파악하기 -> 데이터에 특정한 문자열이 포함되어 있으면 O로 출력, 포함되지 않았으면 X로 출력하기
 #MYSQL의 IF문 -> IF(조건문, 참일때 값, 거짓일때 값)
 SELECT ANIMAL_ID, NAME, IF(SEX_UPON_INTAKE LIKE '%Neutered%' or SEX_UPON_INTAKE LIKE '%Spayed%', 'O', 'X') AS '중성화'
 FROM ANIMAL_INS
@@ -163,7 +163,7 @@ ON I.ANIMAL_ID = O.ANIMAL_ID
 ORDER BY (O.DATETIME - I.DATETIME) DESC 
 LIMIT 2
 
-#DATETIME에서 DATE로 형변환 -> 년월일시분초에서 년월일만 추출하기 : DATE_FORMAT(날짜, 형식) = '날짜'를 지정한 '형식'으로 출력
+1#DATETIME에서 DATE로 형변환 -> 년월일시분초에서 년월일만 추출하기 : DATE_FORMAT(날짜, 형식) = '날짜'를 지정한 '형식'으로 출력
 SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d')
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
