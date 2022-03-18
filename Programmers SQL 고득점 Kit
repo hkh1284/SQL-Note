@@ -136,7 +136,8 @@ SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
 FROM ANIMAL_INS
 WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
 
-1#이름에 el이 들어가는 동물 찾기 -> 대소문자 구분없이 이름에 'el'이 들어가는 개의 ID와 이름 출력 -> LIKE 사용 시, 대소문자 구분X. 그러므로 LIKE '%el%'만 사용해도 된다.
+2#이름에 el이 들어가는 동물 찾기 -> 대소문자 구분없이 이름에 'el'이 들어가는 개의 ID와 이름 출력 -> LIKE 사용 시, 대소문자 구분X. 그러므로 LIKE '%el%'만 사용해도 된다.
+#문제 조건 잘 보기 -> 개!
 <수정 전>
 SELECT ANIMAL_ID, NAME
 FROM ANIMAL_INS
