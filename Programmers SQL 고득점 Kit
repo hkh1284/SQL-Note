@@ -82,7 +82,7 @@ HAVING COUNT(NAME) >= 2
 ORDER BY NAME
 
 #년-월-일 시:분:초 형태의 날짜데이터에서 시간데이터만 추출하기 : HOUR(기준날짜) -> YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND()
-1#입양시간 구하기(1)
+2#입양시간 구하기(1)
 <틀린코드>
 SELECT HOUR(DATETIME) AS 'HOUR', COUNT(ANIMAL_ID) AS 'COUNT'
 FROM ANIMAL_OUTS
